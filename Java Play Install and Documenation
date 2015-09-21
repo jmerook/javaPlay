@@ -1,0 +1,86 @@
+#Installing Java Play! and Creating A New New Application
+by Jacob Merook
+<hr />
+
+
+Installation
+-------------
+This tutorial was created with the use of the java Play! documentation.
+https://www.playframework.com/documentation/2.4.x/Home
+**You will need to follow the download and extraction steps from the documentation link above.** 
+
+After you have completed the download and extraction steps from the tutorial you will need to travel to the folder that you extracted activator into. I chose to put mine in <br /><code>C:\activator-dist-1.3.6</code>
+
+Once you are located here you should see something along these lines:
+![inside the activator folder](https://lh3.googleusercontent.com/-NuEyAYSIjB8/VenakALokpI/AAAAAAAAAFE/DNZ8dkvEut8/s0/activator.png "activator.png")
+<br/ >From this point you should use the keyboard shortcut <code>shift + right click</code> to and from the options you should select "open command window here". Where you should see a command shell with the follow path: <br />
+![command shell for activator](https://lh3.googleusercontent.com/-nLOTUJFscxQ/VenceKsRuQI/AAAAAAAAAFg/j6J2xreMCjE/s0/activator1.PNG "activator1.PNG")
+<br />
+you should then type in the command <code>activator ui</code>. The first time you run this command it might take some time to update the various dependencies. Once the process has completed it should take you to a web page that looks like this. 
+<br />
+![successful activator compilation ](https://lh3.googleusercontent.com/-0MvDeJY_9Fw/Vendj1lLXCI/AAAAAAAAAFw/i7qosgraEPU/s0/activator2.PNG "activator2.PNG")
+<br />
+If you look at your address bar you will notice that it is running from <code>127.0.0.1:8888/home</code>
+
+
+>**Note** If you are having issues getting activator to run please read the special instructions below. I had to follow these in order to resolve these issues. 
+
+<ul>
+<li>If you get errors regarding JDK make sure that you are using a JDK and not a JRE. JDK comes with a compiler whereas the JRE is simply a run time environment.</li>
+<li>here is an example of the path to the jdk <code>C:\Program Files\Java\jdk1.7.0_45\bin\java.exe</code> and then do the same thing to include the <code>javac.exe</code></li>
+</ul>
+
+**After setting your path to include the JDK you will need to restart your computer so that the changes will take effect**
+
+This concludes the installation of Play! and Activator. 
+<hr />
+
+Creating a new Application 
+-------------
+
+The <code>activator</code> command can be used to create a new Play application. Activator allows you to select a template that your new application should be based off. For vanilla Play projects, the names of these templates are <code>play-scala</code> for Scala based Play applications, and <code>play-java</code> for Java based Play applications.
+
+To create a new vanilla Play Java Application follow the instructions above where you travel to the activator folder and open a command window. After doing this type the follow command: <br /><code>activator new my-first-app play-java</code>
+<br /><code>my-first-app</code> can be substituted with whatever you wanted to call the application. 
+
+after then you can run:
+<code>cd my-first-app</code>
+<code>activator</code>(this makes sure you current project is set to my-first-app)
+<code>run</code>
+after running those commands you should be able to look at the results in the command window to see that you are currently compiled, and are running at localhost:9000
+
+![activator shell](https://lh3.googleusercontent.com/-JtMwd_PbhGk/VenmyEa1wgI/AAAAAAAAAG4/V42wI4edmXA/s0/activator4.PNG "activator4.PNG")
+
+type <code>localhost:9000</code> into your browser and you should be greeted with a page similar to this. 
+
+![successfull end page](https://lh3.googleusercontent.com/-d0TFfmCvMcc/VenoJnuziUI/AAAAAAAAAHI/Mfa7GAHJG0I/s0/activator5.PNG "activator5.PNG")
+
+<hr />
+
+Configuring Play! to IntelliJ
+------
+
+To use Play! with  IntelliJ you need to import your project via IntelliJ's import process. To import a Play project:
+
+Open Project wizard, select <b>Import Project</b>.
+In the window that opens, select a project you want to import and click <b>OK</b>.
+On the next page of the wizard, select <b>Import project from external model</b> option, choose <b>SBT project</b> and click <b>Next</b>.
+On the next page of the wizard, select additional import options and click <b>Finish</b>.
+
+Check the project’s structure, make sure all necessary dependencies are downloaded. You can use code assistance, navigation and on-the-fly code analysis features.
+
+You can run the created application and view the result in the default browser <code>localhost:9000</code> to run a Play application:
+
+Create a new Run Configuration – From the main menu, select Run -> <b>Edit Configurations</b>
+Click on the + to add a new configuration
+From the list of configurations, choose “SBT Task”
+In the “tasks” input box, simply put “run”
+Apply changes and select OK.
+Now you can choose “Run” from the main Run menu and run your application
+You can easily start a debugger session for a Play application using default Run/Debug Configuration settings.
+
+
+
+Please refer to <a href ="https://www.playframework.com/documentation/2.4.x/Anatomy">this</a> page to this page for the proper hierarchy of a typical play application. 
+
+At this point you should be able to create a new application, and configure it to run in InteliJ!
