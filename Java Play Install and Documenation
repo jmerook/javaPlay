@@ -30,6 +30,8 @@ If you look at your address bar you will notice that it is running from <code>12
 <li>here is an example of the path to the jdk <code>C:\Program Files\Java\jdk1.7.0_45\bin\java.exe</code> and then do the same thing to include the <code>javac.exe</code></li>
 </ul>
 
+Here is an example of the contents of my JAVA_HOME environment variable:
+<code>C:\Program Files\Java\jdk1.8.0_65\</code>
 **After setting your path to include the JDK you will need to restart your computer so that the changes will take effect**
 
 This concludes the installation of Play! and Activator. 
