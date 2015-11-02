@@ -1,0 +1,12 @@
+@()
+
+@main("Creating User") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<form method="POST" action="@routes.Authentication.createUser()">
+    <!-- pre-populated form of the person name-->
+    <input type="text" name="username"/>
+    <input type="password" name="password"/>
+    <button>Create User</button>
+</form>
+}

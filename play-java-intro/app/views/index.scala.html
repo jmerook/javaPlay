@@ -1,0 +1,18 @@
+@()
+
+@main("Welcome to Play") {
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+    <link rel = "stylesheet" href='@routes.Assets.at("stylesheets/bootstrap.css")'>
+
+    <ul id="persons"></ul>
+
+    <form class="form-inline" method="POST" action="@routes.Application.addPerson()">
+        <input type="text" name="name" class="form-control" placeholder="name"/>
+        <input type="text" name="newfield" class="form-control" placeholder="test"/>
+        <button class="btn btn-primary">Add Person</button>
+    </form>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type='text/javascript' src='@routes.Assets.at("javascripts/bootstrap.js")'></script>
+}

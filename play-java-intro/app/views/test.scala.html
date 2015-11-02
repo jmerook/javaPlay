@@ -1,0 +1,37 @@
+@(personList : List[Person])
+
+@main("Welcome to Play") {
+    <!-- bootstrap-->
+    <link rel = "stylesheet" href='@routes.Assets.at("stylesheets/bootstrap.css")'>
+
+
+<table class ="table">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Text</td>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- for each person in the personList variable-->
+        <a href="/CreateUser" class="btn btn-primary">Create User</a>
+            @for(person <- personList){
+            <tr>
+                <td>@person.id</td>
+                <td>@person.name</td>
+                <td>@person.newfield</td>
+                <td>
+                    <a class="btn btn-primary" href="@routes.Application.getSinglePerson(person.id)">Show Person</a>
+                    <a class="btn btn-primary" href="@routes.Application.deletePerson(person.id)" >Delete Person</a>
+                    <a class="btn btn-primary" href="@routes.Application.editPerson(person.id)">Edit Person</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+</table>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type='text/javascript' src='@routes.Assets.at("javascripts/bootstrap.js")'></script>
+}

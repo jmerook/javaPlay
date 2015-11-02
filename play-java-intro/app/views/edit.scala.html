@@ -1,0 +1,11 @@
+@(singlePerson : Person)
+
+@main("Editing Person View") {
+<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
+
+<form method="POST" action="@routes.Application.submitEdit()">
+    <!-- pre-populated form of the person name-->
+    <input type="text" name="name"  placeholder="@singlePerson.name"/>
+    <button>Update Person</button>
+</form>
+}
